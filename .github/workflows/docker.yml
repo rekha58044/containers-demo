@@ -1,0 +1,12 @@
+name: container-job
+on: push
+jobs:
+  docker-demo:
+    runs-on: ubuntu-latest
+    container:
+        image: python:3.11-slim
+    steps:
+        - name: checkout code
+          uses: actions/checkout@v4
+        - name: print python version
+          run: python --version
